@@ -1,7 +1,9 @@
+import { FooterContainer } from "./styledComponents";
+
 export const Footer = () => {
   return (
-    <div className="footer">
+    <FooterContainer>
         <p>2023 - Taskmate</p>
-    </div>
+    </FooterContainer>
   )
 }

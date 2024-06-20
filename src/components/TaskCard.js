@@ -1,14 +1,12 @@
-import React from 'react'
-import './TaskCard.css'
+import { TaskCardContainer, TaskDetails, DeleteTask } from "./styledComponents";
 
 export const TaskCard = ({task,deleteTask}) => {
-  console.log(task)
   return (
-    <div className="taskCard">
-        <li className={task.completed ? "completed" : "incomplete"}>
+    <TaskCardContainer>
+        <TaskDetails completed={task.completed} >
                   <span>{task.id} - {task.name}</span>
-                  <button onClick={()=>deleteTask(task.id)} >Delete</button>
-        </li>
-    </div>
+                  <DeleteTask onClick={()=>deleteTask(task.id)} >Delete</DeleteTask>
+        </TaskDetails>
+    </TaskCardContainer>
   )
 }

@@ -1,18 +1,22 @@
-import { useState,useRef } from 'react';
-import './AddTask.css';
+import { useState, useRef } from 'react';
+import {
+    AddTaskContainer,
+    TaskInput,
+    AddTaskButton,
+    ResetButton,
+    TaskStatus
+} from "./styledComponents";
 
-export const AddTask = ({tasks,setTasks}) => {
-    const [taskValue,setTaskValue] = useState("");
-    const [progress,setProgress] = useState(false);
+export const AddTask = ({ tasks, setTasks }) => {
+    const [taskValue, setTaskValue] = useState("");
+    const [progress, setProgress] = useState(false);
     const taskRef = useRef();
 
-    const resetInput = () =>
-    {
-        taskRef.current.value="";
+    const resetInput = () => {
+        taskRef.current.value = "";
     }
 
-    const submitInput = (event) =>
-    {
+    const submitInput = (event) => {
         event.preventDefault();
         const task = {
             id: Math.floor(Math.random() * 100),
@@ -27,16 +31,16 @@ export const AddTask = ({tasks,setTasks}) => {
     }
 
     return (
-        <div className="addTask">
+        <AddTaskContainer>
             <form onSubmit={submitInput}>
-                <input type="text" name="add" id="add" placeholder="Task Name" autoComplete="off" onChange={(e)=> setTaskValue(e.target.value)} />
-                <select onChange={(event) => setProgress(event.target.value)} value={progress} >
+                <TaskInput type="text" name="add" id="add" placeholder="Task Name" autoComplete="off" onChange={(e) => setTaskValue(e.target.value)} />
+                <TaskStatus onChange={(event) => setProgress(event.target.value)} value={progress} >
                     <option value={false}>Pending</option>
                     <option value={true}>Completed</option>
-                </select>
-                <span onClick={resetInput} className="reset">Reset</span>
-                <button type="submit">Add Task</button>
+                </TaskStatus>
+                <ResetButton onClick={resetInput}>Reset</ResetButton>
+                <AddTaskButton type="submit">Add Task</AddTaskButton>
             </form>
-        </div>
+        </AddTaskContainer>
     )
 }

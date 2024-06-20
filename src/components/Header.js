@@ -1,12 +1,11 @@
-import React from 'react'
-import Pic  from '../assets/logo.jpg'
-import './Header.css'
+import Pic from '../assets/logo.jpg';
+import { Navbar, Image } from "./styledComponents";
 
 export const Header = () => {
   return (
-    <div className="header">
-        <img src={Pic} alt="" />
-        <h2>Taskmate</h2>
-    </div>
+    <Navbar>
+      <Image src={Pic} alt="" />
+      <h2>Taskmate</h2>
+    </Navbar>
   )
 }
