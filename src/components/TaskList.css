@@ -1,0 +1,32 @@
+.taskList
+{
+    margin: 100px;
+    margin-bottom: auto;
+    padding: 20px 60px;
+    border: 1.5px solid beige;
+    box-shadow: 2px 4px 2px rgb(0, 0, 0, 0.1);
+    width: auto;
+    height: auto;
+}
+
+.taskList .heading
+{
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.taskList .heading button
+{
+    font-weight: bold;
+    background-color: aliceblue;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.taskList ul
+{
+    list-style: none;
+}
